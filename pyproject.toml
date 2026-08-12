@@ -1,3 +1,16 @@
 [build-system]
-requires = ['setuptools>=40.8.0']
-build-backend = 'setuptools.build_meta'
+requires = [
+    "setuptools>=40.8.0",
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+version = "0.63.6+lineaje.1"
+maintainers = [
+    { name = "Lineaje DepFixer", email = "221268890+Lineaje-DepFixer@users.noreply.github.com" },
+]
+
+[project.urls]
+Homepage = "https://github.com/lineaje-labs-gos/pennersr-django-allauth"
+Repository = "https://github.com/lineaje-labs-gos/pennersr-django-allauth"
+Tracker = "https://github.com/lineaje-labs-gos/pennersr-django-allauth/issues"
