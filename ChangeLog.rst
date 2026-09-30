@@ -11,7 +11,21 @@
 Security notice
 ---------------
 
-- ...
+- The Bitbucket and Pinterest providers used mutable usernames as the identifier
+  for third-party accounts. If a username changed and was then claimed by
+  another user, that user could log in to the original owner's account. The
+  providers now use stable identifiers instead. Thanks to Sanjeev Kumar for
+  reporting.
+
+
+Backwards incompatible changes
+------------------------------
+
+- Bitbucket and Pinterest: Existing ``SocialAccount`` records will no longer be
+  linked due to the switch to stable identifiers.  You will need to manually
+  handle this situation by populating ``SocialAccount.uid`` based on
+  ``account_id`` (Bitbucket) or ``id`` (Pinterest) located in
+  ``SocialAccount.extra_data``.
 
 
 65.19.5 (2026-09-28)

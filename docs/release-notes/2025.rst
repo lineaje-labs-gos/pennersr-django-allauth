@@ -62,7 +62,7 @@ Backwards incompatible changes
   ``SocialAccount`` records will no longer be linked due to the switch to
   ``sub``.  You will need to manually handle this situation either, by
   populating ``SocialAccount.uid`` based on ``sub`` located in
-  ``SocialAccount.extra_data``,or, if you are absolutely certain the security
+  ``SocialAccount.extra_data``, or, if you are absolutely certain the security
   notice is of no concern for your use case, by setting ``"uid_field":
   "preferred_username"`` in the relevant ``SocialApp.settings``.
 
