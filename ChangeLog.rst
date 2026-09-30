@@ -11,6 +11,10 @@
 Security notice
 ---------------
 
+- The minimum OAuthLib version for the ``socialaccount`` and ``idp-oidc`` extras
+  is now 4.0.0, incorporating upstream security fixes for GHSA-hj66-6f7g-4r5v
+  and GHSA-xpv3-w29h-x7cv.
+
 - The Bitbucket and Pinterest providers used mutable usernames as the identifier
   for third-party accounts. If a username changed and was then claimed by
   another user, that user could log in to the original owner's account. The
