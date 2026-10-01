@@ -1,4 +1,4 @@
-65.19.6 (2026-09-30)
+65.19.7 (unreleased)
 ********************
 
 .. note::
@@ -7,6 +7,15 @@
     Please consider supporting its continued development by becoming a sponsor at
     https://allauth.org/sponsors/. Your support helps keep this project thriving!
 
+
+Security notice
+---------------
+
+- ...
+
+
+65.19.6 (2026-09-30)
+********************
 
 Security notice
 ---------------
