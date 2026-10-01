@@ -11,7 +11,19 @@
 Security notice
 ---------------
 
-- ...
+- The Tumblr providers (both ``tumblr`` and ``tumblr_oauth2``) used mutable blog
+  names as the identifier for third-party accounts. If a blog name changed and
+  was then claimed by another user, that user could log in to the original
+  owner's account. The providers now use the stable blog UUID instead. Thanks to
+  Sanjeev Kumar for reporting.
+
+
+Backwards incompatible changes
+------------------------------
+
+- Tumblr: Existing ``SocialAccount`` records will no longer be linked due to the
+  switch to stable identifiers. You will need to manually handle this situation,
+  see the "Account ID Change" section in the Tumblr provider docs.
 
 
 65.19.6 (2026-09-30)

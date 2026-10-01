@@ -59,3 +59,24 @@ You can also set up the provider in `settings.py`::
 For more information about the Tumblr API, see::
 
     https://www.tumblr.com/docs/en/api/v2
+
+
+
+Account ID Change
+*****************
+
+Since version 65.19.7, Tumblr accounts use the stable UUID of the primary blog
+as their UID instead of the mutable Tumblr short name. After upgrading, run the
+following once to update existing Tumblr social accounts::
+
+    from allauth.socialaccount.models import SocialAccount
+
+    for socialaccount in SocialAccount.objects.filter(
+        provider__in=["tumblr", "tumblr_oauth2"]
+    ):
+        socialaccount.uid = next(
+            blog["uuid"]
+            for blog in socialaccount.extra_data["blogs"]
+            if blog.get("primary")
+        )
+        socialaccount.save(update_fields=["uid"])
